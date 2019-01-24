@@ -75,7 +75,13 @@ def single_person(uuid):
 
         person.fare = post_data.get('fare')
         db.session.commit()
-        response_object = person.to_json()
+
+        response_object = {"name": person.name, "age": person.age, "survived": person.survived, 
+                           "passengerClass": person.passengerClass, "sex":person.sex
+                           "siblingsOrSpousesAboard": person.siblingsOrSpousesAboard, 
+                           "parentsOrChildrenAboard": person.parentsOrChildrenAboard, 
+                           "fare": person.fare
+                           }
 
     if request.method == 'DELETE':
         db.session.delete(person)

@@ -2,8 +2,6 @@
 
 ### Docker Compose Build Instructions
 
-minikube version: v0.33.1
-
 
 This was built using the following versions
 
@@ -43,4 +41,12 @@ To view the crude crud app visit http://localhost:8080 should possess same funct
 
 
 ### Kubernetes
+
+Ensure virtualisation is enabled in your bios and run
+
+```sh
+$ chmod +x deploy.sh
+$ minikube start
+$ ./deploy.sh
+```
 

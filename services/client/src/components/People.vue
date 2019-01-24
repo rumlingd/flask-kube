@@ -75,12 +75,12 @@
         </b-form-group>
   
 
-        <b-form-group id="form-class-group"
+        <b-form-group id="form-passengerClass-group"
                       label="Passenger Class:"
-                      label-for="form-class-input">
-            <b-form-input id="form-class-input"
+                      label-for="form-passengerClass-input">
+            <b-form-input id="form-passengerClass-input"
                           type="text"
-                          v-model="addPersonForm.class"
+                          v-model="addPersonForm.passengerClass"
                           required
                           placeholder="Enter Passenger Class">
             </b-form-input>
@@ -184,12 +184,12 @@
         </b-form-group>
   
 
-        <b-form-group id="form-class-edit-group"
+        <b-form-group id="form-passengerClass-edit-group"
                       label="Passenger Class:"
-                      label-for="form-class-edit-input">
-            <b-form-input id="form-class-edit-input"
+                      label-for="form-passengerClass-edit-input">
+            <b-form-input id="form-passengerClass-edit-input"
                           type="text"
-                          v-model="editPersonForm.class"
+                          v-model="editPersonForm.passengerClass"
                           required
                           placeholder="Enter Passenger Class">
             </b-form-input>
@@ -282,7 +282,7 @@ export default {
       people: [],
       addPersonForm: {
         name: '',
-        class: '',
+        passengerClass: '',
         survived: [],
         sex: '',
         age: '',
@@ -292,9 +292,8 @@ export default {
       },
       editPersonForm: {
         name: '',
-        class: '',
+        passengerClass: '',
         survived: [],
-        name: '',
         sex: '',
         age: '',
         siblingsOrSpousesAboard: '',
@@ -365,10 +364,8 @@ export default {
     },
     initForm() {
       this.addPersonForm.name = '';
-      this.addPersonForm.class = '';
+      this.addPersonForm.passengerClass = '';
       this.addPersonForm.survived = [];
-      this.addPersonForm.passengerClass
-      this.addPersonForm.name = '';
       this.addPersonForm.sex = '';
       this.addPersonForm.age = '';
       this.addPersonForm.siblingsOrSpousesAboard = '';
@@ -376,10 +373,8 @@ export default {
       this.addPersonForm.fare = '';
         
       this.editPersonForm.name = '';
-      this.editPersonForm.class = '';
+      this.editPersonForm.passengerClass = '';
       this.editPersonForm.survived = [];
-      this.editPersonForm.passengerClass
-      this.editPersonForm.name = '';
       this.editPersonForm.sex = '';
       this.editPersonForm.age = '';
       this.editPersonForm.siblingsOrSpousesAboard = '';
@@ -396,7 +391,7 @@ export default {
 
       const payload = {
         name: this.addPersonForm.name,
-        passengerClass: parseInt(this.addPersonForm.class),
+        passengerClass: parseInt(this.addPersonForm.passengerClass),
         survived : survived,
         sex : this.addPersonForm.sex,
         age : parseInt(this.addPersonForm.age),
@@ -417,7 +412,7 @@ export default {
 
       const payload = {
         name: this.editPersonForm.name,
-        passengerClass: parseInt(this.editPersonForm.class),
+        passengerClass: parseInt(this.editPersonForm.passengerClass),
         survived : survived,
         sex : this.editPersonForm.sex,
         age : parseInt(this.editPersonForm.age),

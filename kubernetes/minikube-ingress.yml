@@ -5,14 +5,14 @@ metadata:
   annotations:
 spec:
   rules:
-  - host: hello.world
+  - host: hello-world
     http:
       paths:
       - path: /
         backend:
           serviceName: vue
           servicePort: 8080
-      - path: /books
+      - path: /api/v1/people
         backend:
           serviceName: flask
           servicePort: 5000
