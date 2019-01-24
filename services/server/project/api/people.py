@@ -77,7 +77,7 @@ def single_person(uuid):
         db.session.commit()
 
         response_object = {"name": person.name, "age": person.age, "survived": person.survived, 
-                           "passengerClass": person.passengerClass, "sex":person.sex
+                           "passengerClass": person.passengerClass, "sex":person.sex,
                            "siblingsOrSpousesAboard": person.siblingsOrSpousesAboard, 
                            "parentsOrChildrenAboard": person.parentsOrChildrenAboard, 
                            "fare": person.fare
