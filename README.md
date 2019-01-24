@@ -50,13 +50,17 @@ $ minikube start
 $ ./deploy.sh
 ```
 
-Allow Pods To Start
+Allow Pods To Start. Belowe commands add minikube ip to your host file under container.solutions.
+And seed the database.
+
 
 ```sh
-$ echo "$(minikube ip) container-solutions" | sudo tee -a /etc/hosts
+$ echo "$(minikube ip) container.solutions" | sudo tee -a /etc/hosts
 $ POD_NAME=$(kubectl get pod -l service=postgres -o jsonpath="{.items[0].metadata.name}")
 $ kubectl exec $POD_NAME --stdin --tty -- createdb -U sample people
 $ FLASK_POD_NAME=$(kubectl get pod -l app=flask -o jsonpath="{.items[0].metadata.name}")
 $ kubectl exec $FLASK_POD_NAME --stdin --tty -- python manage.py recreate_db
 $ kubectl exec $FLASK_POD_NAME --stdin --tty -- python manage.py seed_db
 ```
+
+To view the app visit http://container.solutions/
