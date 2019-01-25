@@ -45,17 +45,16 @@ To view the crude crud app visit http://localhost:8080 should possess same funct
 Ensure virtualisation is enabled in your bios and run the following commands
 
 ```sh
-$ chmod +x deploy.sh
 $ minikube start
-$ ./deploy.sh
+$ sh deploy.sh
 ```
 
-Allow Pods To Start. Belowe commands add minikube ip to your host file under container.solutions.
+Allow Pods To Start. Belowe commands add minikube ip to your host file under hello.world
 And seed the database.
 
 
 ```sh
-$ echo "$(minikube ip) container.solutions" | sudo tee -a /etc/hosts
+$ echo "$(minikube ip) hello.world" | sudo tee -a /etc/hosts
 $ POD_NAME=$(kubectl get pod -l service=postgres -o jsonpath="{.items[0].metadata.name}")
 $ kubectl exec $POD_NAME --stdin --tty -- createdb -U sample people
 $ FLASK_POD_NAME=$(kubectl get pod -l app=flask -o jsonpath="{.items[0].metadata.name}")
@@ -63,4 +62,4 @@ $ kubectl exec $FLASK_POD_NAME --stdin --tty -- python manage.py recreate_db
 $ kubectl exec $FLASK_POD_NAME --stdin --tty -- python manage.py seed_db
 ```
 
-To view the app visit http://container.solutions/
+To view the app visit http://hello.world/

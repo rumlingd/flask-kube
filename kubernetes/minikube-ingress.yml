@@ -5,7 +5,7 @@ metadata:
   annotations:
 spec:
   rules:
-  - host: container.solutions
+  - host: hello.world
     http:
       paths:
       - path: /
