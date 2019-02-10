@@ -1,4 +1,4 @@
-# Dockerised Flask API With Postgres Database
+# Dockerised Flask API for Titanic Dataset With Postgres Database
 
 ### Docker Compose Build Instructions
 
